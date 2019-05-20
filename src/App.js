@@ -7,7 +7,7 @@ import qs from 'qs'
 const App = () => {
   useEffect(() => {
     axios
-      .get(`https://schoolparking.program.com.tw/auth/apilogin/?account=lora_jack&password=lora_170602`)
+      .get(`/auth/apilogin/?account=lora_jack&password=lora_170602`)
       .then(res => {
         const sid = res.data[0].retVal
         localStorage.setItem('sid', sid)
@@ -26,7 +26,7 @@ const App = () => {
     const method = 'managerlogin'
     axios({
       method: 'post',
-      url: `https://schoolparking.program.com.tw/backend/${method}`,
+      url: `/backend/${method}`,
       headers: {
         'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
       },
